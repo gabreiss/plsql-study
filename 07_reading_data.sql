@@ -12,6 +12,8 @@ BEGIN
     dbms_output.put_line('Country: ' || c_addr);
 END
 
+-- Data type according to the table
+
 DECLARE
     c_id    customer.customer_id%type:= 10;
     c_name  customer.first_name%type;
