@@ -1,0 +1,15 @@
+EXISTS(n)       Return TRUE if the specified element exists
+COUNT           Return the number of elements in the collection
+LIMIT           Returns the maximum number of elements for a VARRAY, or NULL for nested tables
+FIRTS           Returns the index of the first elements
+LAST            Returns the index of the last element
+PRIOR(n)        Returns the index of the element prior to the specified element
+NEXT(n)         Returns the index of the next element
+EXTEND          Appends a single null element
+EXTEND(n)       Appends n null elements
+EXTEND(n1,n2)   Appends n1 copies of the n2th element
+TRIM            Removes a single element from the end
+TRIM(n)         Removes n elements from the end
+DELETE          Removes all elements
+DELETE(n)       Removes element n
+DELETE(n1,n2)   Removes all elements from n1 to n2

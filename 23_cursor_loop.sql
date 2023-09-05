@@ -1,8 +1,10 @@
 CREATE OR REPLACE PROCEDURE process_customer
-(c_id IN customer.customer_id%type)
+(
+    c_id IN customer.customer_id%type
+    )
 IS
     cursor c is SELECT first_name, last_name
-    FROM customer
+    FROM customer   
     WHERE customer_id = c_id; -- declaring the cursor
 
     c_rec c%rowtype;
@@ -13,16 +15,18 @@ OPEN c; -- opening the cursor
 
 LOOP
     fetch c
-        INTO c_fname, c_lname; -- fetching the data
+        INTO c_rec; -- fetching the data
 
     EXIT WHEN c%NOTFOUND;
-    dbms_output.put_line('First name: ' || c_fname)
-    dbms_output.put_line('Last name: ' || c_lname)
+    dbms_output.put_line('First name: ' || c_rec.first)
+    dbms_output.put_line('Last name: ' || c_rec.last_name)
 END LOOP;
 
     close c; -- close the cursor
 
-END process_procuredure;
+END;
+
+execute process_customer(10)
 
  
 
